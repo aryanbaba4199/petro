@@ -1,19 +1,18 @@
 import React, { useState } from "react";
-import createLedger from "./createLedger"
+import CreateLedger from "./createLedger"
 
-const Ledger = () => {
-  const [selectedParty, setSelectedParty] = useState("");
+const Ledger = ({party, setParty}) => {
+  
   const [open, setOpen] = useState(false);
   const partName = ["Ram", "Shyam"];
 
   const handlePartyChange = (event) => {
     const selectedValue = event.target.value;
-    setSelectedParty(selectedValue);
+    setParty(selectedValue);
     
     // Check if the selected value is "Create Ledger" and call the handler function
     if (selectedValue === "Create Ledger") {
         setOpen(true);
-      
     }
   };
 
@@ -23,19 +22,20 @@ const Ledger = () => {
     <>
       <div>
         <label htmlFor="party">Select Party:</label>
-        <select id="party" value={selectedParty} onChange={handlePartyChange}>
+        <select id="party" value={party} onChange={handlePartyChange}>
           <option value="">Select a party</option>
-          {partName.map((party, index) => (
-            <option key={index} value={party}>
-              {party}
+          {partName.map((i, index) => (
+            <option key={index} value={i}>
+              {i}
             </option>
           ))}
           <option value="Create Ledger">Create Ledger</option>
         </select>
       </div>
-      {
-        open && <Dialog open={open} setOpen={setOpen} />
-      }
+      <CreateLedger
+        open = {open}
+        setOpen={setOpen}
+      />
       
     </>
   );
