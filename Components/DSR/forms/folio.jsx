@@ -3,7 +3,7 @@ import React from "react";
 const folio = ({ slip, setSlip, veh, setVeh }) => {
   return (
     <>
-      <div className="flex gap-2">
+      <div className="flex gap-2 mt-2">
         <div className="group">
           <input
             type="text"

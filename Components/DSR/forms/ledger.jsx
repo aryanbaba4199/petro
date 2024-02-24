@@ -20,10 +20,10 @@ const Ledger = ({party, setParty}) => {
 
   return (
     <>
-      <div>
-        <label htmlFor="party">Select Party:</label>
+      <div className="">
+        <label  htmlFor="party">Select Party:</label>
         <select id="party" value={party} onChange={handlePartyChange}>
-          <option value="">Select a party</option>
+          <option className="group" value="">Select a party</option>
           {partName.map((i, index) => (
             <option key={index} value={i}>
               {i}
