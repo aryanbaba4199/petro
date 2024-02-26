@@ -1,9 +1,25 @@
 import React from 'react'
+import { auth } from '@/utils/firebase';
 
 const home = () => {
   return (
     <>
-        Make your Accounting simply
+    {auth ? (
+      <>
+        <div>
+          <div>
+            <p>Welcome Back </p>
+          </div>
+        </div>
+      </>
+    ) : (<>
+          <div>
+          <div>
+            <p>Make</p>
+          </div>
+        </div>
+    </>) }
+        
     </>
   )
 }

@@ -22,10 +22,32 @@ const regSchema = new mongoose.Schema({
         required : true
     }
     ,
+    msReading : {
+        type : [],
+        required : true
+        
+    },
+    hsReading : {
+        type : [],
+        required : true
+        
+    },
+    msStock : {
+        type : Number,
+        required : true
+        
+    },
+    hsStock : {
+        type : Number,
+        required : true
+    },
+
+
     userDetail : {
         type : []
         
     }
+    
 });
 
 const Firm = mongoose.models['Firm'] ||

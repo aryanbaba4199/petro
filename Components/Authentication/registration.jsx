@@ -12,6 +12,14 @@ const registration = ({
   setAddress,
   setMobile,
   setEmail,
+  msTotCount,
+  setmstotCount,
+  hsTotCount,
+  sethstotCount,
+  msStock,
+  setMsstock,
+  hsStock,
+  setHsStock,
 }) => {
   return (
     <>
@@ -86,14 +94,64 @@ const registration = ({
               <span className="bar"></span>
               <label>Email</label>
             </div>
-            <div className="group">
-              <span className="bar"></span>
-              <label>Authenticate Google</label>
-            </div>
-          </div>
-          <div>
             
+           
           </div>
+          <div className="flex gap-8 mt-8">
+            <div className="group">
+              <input
+                type="number"
+                className="input"
+                value={msTotCount}
+                onChange={(e) => setmstotCount(e.target.value)}
+              />
+              <span className="highlight"></span>
+              <span className="bar"></span>
+              <label>Number of MS Totalizer</label>
+            </div>
+            <div className="group">
+              <input
+                type="number"
+                className="input"
+                value={hsTotCount}
+                onChange={(e) => sethstotCount(e.target.value)}
+              />
+              <span className="highlight"></span>
+              <span className="bar"></span>
+              <label>Number of HS Totalizer</label>
+            </div>
+            
+           
+          </div>
+
+          <div className="flex gap-8 mt-8">
+            <div className="group">
+              <input
+                type="number"
+                className="input"
+                value={msStock}
+                onChange={(e) => setMsstock(e.target.value)}
+              />
+              <span className="highlight"></span>
+              <span className="bar"></span>
+              <label>MS Stock</label>
+            </div>
+            <div className="group">
+              <input
+                type="number"
+                className="input"
+                value={hsStock}
+                onChange={(e) => setHsStock(e.target.value)}
+              />
+              <span className="highlight"></span>
+              <span className="bar"></span>
+              <label>HS Stock</label>
+            </div>
+            
+           
+          </div>
+          
+          <div></div>
         </div>
       </>
     </>
